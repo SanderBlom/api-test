@@ -3,7 +3,7 @@ name: Build and Push Custom Docker Image
 on:
   push:
     branches:
-      - trunk
+      - main
   workflow_dispatch:  #Allows manual trigger
 
 jobs:
