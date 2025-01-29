@@ -24,6 +24,7 @@ app.use(session({
 
 // Route to simulate login
 app.post('/login', upload.none(), (req, res) => {
+  console.log(req.body);
   const { tenancyName, usernameOrEmailAddress, password } = req.body;
   if (!tenancyName || !usernameOrEmailAddress || !password) {
     return res.status(400).json({ message: 'All fields are required' });
@@ -58,6 +59,7 @@ app.post('/logout', (req, res) => {
 
 // Example protected route
 app.get('/protected', (req, res) => {
+  console.log(req)
   if (!req.session.user) {
     return res.status(403).json({ message: 'Access denied' });
   }
